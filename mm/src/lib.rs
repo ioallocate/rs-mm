@@ -1,0 +1,10 @@
+pub mod ntapi;
+pub mod module;
+pub mod handle;
+pub mod error;
+pub mod memory;
+
+pub use error::{mm_error, Result};
+pub use handle::{p_handle};
+pub use memory::{mmg};
+pub use module::ModuleInfo;
