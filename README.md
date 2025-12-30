@@ -27,3 +27,8 @@ fn read usage (usize) ->
 fn write usage (usize) ->
 
           foo3.write::<u8>(u_address, &u_value)?;
+
+## Details
+
+ - Process Elevation is not required
+ - idk
