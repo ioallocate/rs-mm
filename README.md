@@ -28,7 +28,25 @@ fn write usage (usize) ->
 
           foo3.write::<u8>(u_address, &u_value)?;
 
+##Usage
+
+include in cargo.toml -> 
+
+           [dependencies] 
+           mm = { path = "path_to_crate" }
+           
+in-file include ->
+
+           use mm::{p_handle, mmg};
+
+
 ## Details
 
  - Process Elevation is not required
- - idk
+ - Binds the functions
+
+          read -? NtReadVirtualMemory
+          write -? NtWriteVirtualMemory
+
+
+                  
