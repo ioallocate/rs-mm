@@ -28,7 +28,7 @@ fn write usage (usize) ->
 
           foo3.write::<u8>(u_address, &u_value)?;
 
-##Usage
+## Include 
 
 include in cargo.toml -> 
 
