@@ -26,4 +26,4 @@ fn read usage (usize) ->
 
 fn write usage (usize) ->
 
-          foo3.write::<u8>(address, &value)?;
+          foo3.write::<u8>(u_address, &u_value)?;
