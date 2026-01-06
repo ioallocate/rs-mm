@@ -1,6 +1,6 @@
 # rs-mm
 
-a memory manager which binds to nt-read/write, to easily r/w of the desired process
+a memory manager which binds to nt-read/write, to easily r/w of the desired process, which also offers a standalone addition of mouse movement.
 
 ## Usage
 
@@ -28,6 +28,35 @@ fn write usage (usize) ->
 
           foo3.write::<u8>(u_address, &u_value)?;
 
+mouse instance creation ->
+
+            let mouse = Mouse::new();
+            
+fn move_to usage (instant) ->
+
+          mouse.move_to(500, 300, None, None)?;
+          
+fn move_to usage (smooth with 30 steps) ->
+
+          mouse.move_to(500, 300, Some(30), None)?;
+          
+fn move_to usage (with sensitivity 1.5x) ->
+
+          mouse.move_to(500, 300, None, Some(1.5))?;
+          
+fn move_to usage (smooth + sensitivity) ->
+
+          mouse.move_to(500, 300, Some(25), Some(0.8))?;
+          
+fn left_click usage ->
+
+          mouse.left_click()?;
+          
+fn right_click usage ->
+
+          mouse.right_click()?;
+          
+
 ## Include 
 
 include in cargo.toml -> 
@@ -37,7 +66,7 @@ include in cargo.toml ->
            
 in-file include ->
 
-           use mm::{p_handle, mmg};
+           use mm::{p_handle, mmg}; //example
 
 
 ## Details
@@ -45,8 +74,8 @@ in-file include ->
  - Process Elevation is not required
  - Binds the functions
 
-          read -? NtReadVirtualMemory
-          write -? NtWriteVirtualMemory
-
+          read            -> NtReadVirtualMemory
+          write           -> NtWriteVirtualMemory
+          mouse control   -> mouse_event (Windows API)
 
                   
